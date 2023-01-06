@@ -1,0 +1,614 @@
+## Exercise #1 (1): Changing text
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #1: Changing text</title>
+    <style>
+        #mydiv {
+            width: 300px;
+            height: 50px;
+            line-height: 50px;  /* for vertical alignment of text */
+            text-align: center;
+            border: 1px solid black;
+            background-color: yellow;
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="mydiv" onmouseout="mOut(this)"  onmouseover="mOver(this)">Hello world</div>
+<script>
+function mOver(obj) {
+  obj.innerHTML = "Can I help you?"
+}
+function mOut(obj) {
+  obj.innerHTML =  "Hello world";
+}
+</script>
+</body>
+</html>
+
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #2 (2): Changing colors
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing colors</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="mydiv" ></div>
+
+<script>
+const btn = document.getElementById('mydiv');
+btn.style.background = "blue";
+let index = 0;
+
+const colors = ['red', 'green', 'blue'];
+
+btn.addEventListener('click', function() {
+    btn.style.backgroundColor = colors[index];
+
+    index = index >= colors.length - 1 ? 0 : index + 1;
+});
+</script>
+</body>
+</html>
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #2b (3): Randomizing initial color
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing colors</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h3>Text Colour: 
+        <select id="colours" onchange="selectColor();">
+            <option value="#ddd">select</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+    </h3>
+<div id="mydiv" ></div>
+<script>
+let colore =document.getElementById("mydiv");
+colore.style.background ="#ddd"
+
+function selectColor(){
+    coloe = document.getElementById("colours").value;
+    document.getElementById("mydiv").style.background = coloe;
+}
+</script>
+</body>
+</html>
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #3-2: Changing images
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing colors</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mydiv" >
+    <select id="imgList">
+        <option value="img/download.jpg">Select Option</option>
+        <option value="img/download.jpg">One 1</option>
+        <option value="img/landing.jpg">Two 2</option>
+        <option value="img/Untitled.png">Three 3</option>
+    </select>
+        <img id="image" src="img/download.jpg"/>
+
+    </div>
+<script>
+var img = document.getElementById("image");
+    img.style.width = "200px";
+    img.style.height = "200px";
+    img.style.border = "1px solid black";
+function setClass(e) {
+    var select = e.target;
+        img.src = select.options[select.selectedIndex].value;
+    return false;
+}
+document.getElementById("imgList").onchange = setClass;
+</script>
+</body>
+</html>
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #4 (4): Formatting text
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #4: Formatting text</title>
+    <style>
+        div {
+            width: 600px;
+            height: 100px;
+            border: 1px solid black;
+            margin-top: 10px;
+            /* default options */
+            font-family: Arial;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+<form name="form">
+    <select name="font_family" id="font_family" onchange="selectfont();">
+        <option value="Arial" selected>Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+    </select>
+    <select name="font_size" id="font_size" onchange="selectsize()">
+        <option value="8pt">8pt</option>
+        <option value="10pt">10pt</option>
+        <option value="12pt" selected>12pt</option>
+        <option value="14pt">14pt</option>
+        <option value="16pt">16pt</option>
+    </select>
+    <label>Italic <input type="checkbox" name="font_italic" id="font_italic" onclick="fontItalic()"></label>
+    <label>Bold <input type="checkbox" name="font_bold" id="font_bold" onchange="fontBold()"></label>
+    <label>Underline <input type="checkbox" name="font_underline" id="font_underline" onclick="fontUnderline()"></label>
+</form>
+
+<div id="text">The quick brown fox jumps over the lazy dog</div>
+<script src="main.js"></script>
+</body>
+</html>
+function selectfont(){
+    font = document.getElementById("font_family").value;
+    document.getElementById("text").style.fontFamily = font;
+}
+function selectsize(){
+    size = document.getElementById("font_size").value;
+    document.getElementById("text").style.fontSize = size;
+}
+function fontItalic(){
+        checkBox = document.getElementById("font_italic");
+        text = document.getElementById("text");
+        if (checkBox.checked == true){
+            text.style.fontStyle = "italic";
+        } else {
+            text.style.fontStyle = "inherit";
+        }
+    } 
+function fontBold(){
+    checkBox = document.getElementById("font_bold");
+    text = document.getElementById("text");
+    if (checkBox.checked == true){
+        text.style.fontWeight = "bold";
+    } else {
+        text.style.fontWeight = "initial";
+    }
+}
+function fontUnderline(){
+    checkBox = document.getElementById("font_underline");
+    text = document.getElementById("text");
+    if (checkBox.checked == true){
+        text.style.textDecoration = "underline";
+    } else {
+        text.style.textDecoration = "initial";
+    }
+}
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #5: Input check</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+        }
+        .err {
+            color: red;
+            font-size: 0.7em;
+        }
+    </style>
+    <script>
+        /* TODO complete this part */
+    </script>
+</head>
+<body>
+
+<form name="pw">
+    <table>
+        <tr>
+            <td>Password (min 6 characters):</td>
+            <td><input type="password" name="password1" id="password1" size="10"   placeholder="Password" onkeyup="checkPass(this.value)"></td>
+            <td>
+                <div id="pw1_check" class="err"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>Repeat password:</td>
+            <td><input type="password" name="password2" id="password2" size="10"  placeholder="Password" onkeyup="check()"></td>
+            <td>
+                <div id="pw2_check" class="err"></div>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" id="submitBtn"  onclick="matchPassword()"/>
+</form>
+<script src="main.js"></script>
+</body>
+</html>
+var pw1 = document.getElementById("password1").value;  
+var pw2 = document.getElementById("password2").value;  
+
+function matchPassword() {  
+    if(pw1 != pw2)  
+    {   
+        document.getElementById("errer").innerHTML = "Password repeat error";
+    }else if(pw1.length >= 6){    
+        document.getElementById("errer").innerHTML = "Password Length low";
+    }else if(pw2.length >= 6 ){
+        document.getElementById("errer").innerHTML = "Password repeat length low";
+    }else{
+        document.getElementById("errer").innerHTML = "More than one failure";
+    }
+} 
+function checkPass(pass,pass1){
+    var pw1_check = document.getElementById("pw1_check");
+    var pw2_check = document.getElementById("pw2_check");
+
+    if(pass.length >= 0 && pass.length <= 5) {
+        pw1_check.style.color = "red";
+        pw1_check.innerHTML = "Too Short"
+        return ;
+    }else if(pass.length >= 6 && pass.length <= 10){
+        pw1_check.style.color = "yellow";
+        pw1_check.innerHTML = "medium"
+        return ;
+    }else if(pass.length >= 11 ){
+        pw1_check.style.color = "green";    
+        pw1_check.innerHTML = "hard"
+        return ;
+    }
+}
+function check() {
+    if (document.getElementById('password1').value == document.getElementById('password2').value) {
+        document.getElementById('pw2_check').style.color = 'green';
+        document.getElementById('pw2_check').innerHTML = 'matching';
+    } else {
+        document.getElementById('pw2_check').style.color = 'red';
+        document.getElementById('pw2_check').innerHTML = 'not matching';
+    }
+}
+##############################################################################################
+##############################################################################################
+######################################################x#######################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #6 : Content show/hide
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #6: Content show/hide</title>
+    <style>
+        * {
+            font-family: Georgia, serif;
+        }
+        article {
+            width: 400px;
+            border: 1px solid grey;
+            background-color: #ececec;
+            position: relative;
+            margin: 5px;
+        }
+        article h2 {
+            margin: 0px;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+        article .showlink {
+            position: absolute;
+            right: 10px;
+            top: 20px;
+        }
+        article .text {
+            background-color: white;
+            padding: 10px;
+            font-family: Verdana, sans-serif;
+            font-size: 0.9em;
+            color: #a9a9a9;
+            display: none;
+        }
+    </style>
+    <script>
+        /* TODO this is for you to complete */
+    </script>
+</head>
+<body>
+<article>
+    <h2>What is lorem ipsum?</h2>
+    <div id="p1_show" class="showlink"  onclick="myFunction()"><a href="#">Show</a></div>
+    <div id="p1_text" class="text">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p  onclick="hid()"><a href="#">Hide</a></p>
+    </div>
+</article>
+<article>
+    <h2>Why do we use it?</h2>
+    <div id="p2_show" class="showlink"><a href="#" onclick="myFunction2()">Show</a></div>
+    <div id="p2_text" class="text">
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
+            at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            as opposed to using 'Content here, content here', making it look like readable English. Many desktop
+            publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
+            'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        <p onclick="hid2()"><a href="#">Hide</a></p>
+    </div>
+</article>
+<article>
+    <h2>Where does it come from?</h2>
+    <div id="p3_show" class="showlink" onclick="myFunction3()"><a href="#">Show</a></div>
+    <div id="p3_text" class="text">
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+            literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+            Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem
+            Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable
+            source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
+            of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular
+            during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
+            section 1.10.32.</p>
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
+            1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact
+            original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+        <p onclick="hid3()"><a href="#" id="Hide">Hide</a></p>
+    </div>
+</article>
+<script src="main.js"></script>
+</body>
+</html>
+function myFunction() {
+    var x = document.getElementById("p1_text");
+        x.style.display = "block";
+}
+function myFunction2() {
+    var y = document.getElementById("p2_text");
+        y.style.display = "block";
+}
+function myFunction3() {
+    var z = document.getElementById("p3_text");
+        z.style.display = "block";
+}
+function hid(){
+    var x = document.getElementById("p1_text");
+        x.style.display = "none";
+}
+function hid2(){
+    var y = document.getElementById("p2_text");
+        y.style.display = "none";
+}
+function hid3(){
+    var z = document.getElementById("p3_text");
+        z.style.display = "none";
+}
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #7  : Simple playlist patr 2 No sol
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #7: Simple playlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul#playlist {
+            border: 1px solid #a9a9a9;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 0px;
+            list-style-type: none;
+        }
+        ul#playlist li {
+            border-bottom: 1px solid #a9a9a9;
+            padding: 10px;
+            background-image: linear-gradient(#f9f9f9, #e3e3e3);
+        }
+        ul#playlist li::before {
+ 
+        }
+        ul#playlist li:last-child {
+            border-bottom: none;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        ul#playlist li:first-child {
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <input type="text" id="songTextInput" size="40" placeholder="Song name">
+    <input type="button" id="addButton" value="Add Song" onclick="insertText()">
+</form>
+
+<ul id="playlist" onclick="removeText()">
+    <li>ssss</li>
+</ul>
+<script src="main.js"></script>
+</body>
+</html>
+function insertText(){
+    const para = document.createElement("li");
+    var tex = document.getElementById("songTextInput").value;
+    const node = document.createTextNode(tex);
+    para.appendChild(node);
+    const element = document.getElementById("playlist");
+    element.appendChild(para);      
+}
+function removeText(){
+
+}
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #8 : Color picker
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #8: Color picker</title>
+    <style>
+        #colors {
+            width: 576px;
+            height: 216px;
+            border: 1px solid black;
+        }
+        #selected {
+            margin-top: 5px;
+            padding: 5px;
+            text-align: center;
+            width: 120px;
+            height: 1em;
+            border: 1px solid black;
+        }
+        .choice {
+            float:left;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            margin: 1px;
+        }
+    </style>
+    <script src="exercise8.js"></script>
+</head>
+<body>
+    <div id="colors"></div>
+    <div id="selected"></div>
+    <script src="main.js"></script>
+</body>
+</html>
+function initGrid() {
+    var colors = [];
+    var range = ["00", "33", "66", "99", "cc", "ff"];
+
+    for (var r = 0; r < range.length; r++) {
+        for (var g = 0; g < range.length; g++) {
+            for (var b = 0; b < range.length; b++) {
+                colors.push("#" + range[r] + range[g] + range[b]);
+            }
+        }
+    }
+var cdiv = document.getElementById("colors");
+    for (var i = 0; i < colors.length; i++) {
+        var tile = document.createElement("div");
+        tile.className = "choice";
+        tile.style.backgroundColor = colors[i];
+        tile.addEventListener("click", tileClicked);
+        cdiv.appendChild(tile);
+    }
+}
+function tileClicked() {
+    var color = this.style.backgroundColor;
+    var sel = document.getElementById("selected");
+    sel.style.backgroundColor = color;
+    sel.innerHTML = color;
+}
+window.onload = function () {
+    initGrid();
+}
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+## Exercise #9 : Labyrinth game
+
+
+
+ 

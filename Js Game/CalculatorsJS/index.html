@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <input id="output" class="output">
+            <input id="result" class="result"> 
+        </div>
+        <div class="input">
+            <button onclick="getClear()" id="clear" >AC</button>
+            <button onclick="getDelet()" id="del">del</button>
+            <button onclick="getOperation('%')" id="%">%</button>
+            <button onclick="getOperation('/')" id="/">&#247;</button>
+            <button onclick="getNumber(7)" id="7">7</button>
+            <button onclick="getNumber(8)" id="8">8</button>
+            <button onclick="getNumber(9)" id="9">9</button>
+            <button onclick="getOperation('*')" id="*">&times;</button>
+            <button onclick="getNumber(4)" id="4">4</button>
+            <button onclick="getNumber(5)" id="5">5</button>
+            <button onclick="getNumber(6)" id="6">6</button>
+            <button onclick="getOperation('-')" id="-">-</button>
+            <button onclick="getNumber(1)" id="1">1</button>
+            <button onclick="getNumber(2)" id="2">2</button>
+            <button onclick="getNumber(3)" id="3">3</button>
+            <button onclick="getOperation('+')" id="+">+</button>
+            <button id="empty"></button>
+            <button onclick="getNumber(0)" id="0">0</button>
+            <button onclick="getNumber('.')"id=".">.</button>
+            <button onclick="calculator()" id="=">=</button>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

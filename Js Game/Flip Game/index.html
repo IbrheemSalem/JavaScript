@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flip Game</title>
+        <link rel="stylesheet" href="main.css"/>
+    </head>
+    <body>
+    <div class="continer">
+        <div class="grid-item">
+            <button class="button2"  id="button2" onclick="startGame()">
+                start
+            </button>
+        </div> 
+    </div>
+        <div class='light x1'></div>
+        <div class='light x2'></div>
+        <div class='light x3'></div>
+        <div class='light x4'></div>
+        <div class='light x5'></div>
+        <div class='light x6'></div>
+        <div class='light x7'></div>
+        <div class='light x8'></div>
+        <div class='light x9'></div>
+        <div class="memory-game-blocks">
+            <div class="game-block" data-img="angular">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/angular.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="angular">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/angular.png" alt="NOt img"/>
+                </div>
+            </div>
+
+            <div class="game-block" data-img="C++">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/C++.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="C++">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/C++.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="css">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/css.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="css">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/css.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="git">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/Git.jpg" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="git">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/Git.jpg" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="HTML5">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/HTML5.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="HTML5">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/HTML5.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="javascript">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/javascript.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="javascript">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/javascript.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="JQ">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/JQ.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="JQ">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/JQ.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="node">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/node.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="node">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/node.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="Python">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/Python.jpg" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="Python">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/Python.jpg" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="React">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/React.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="React">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/React.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="sass">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/sass.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="sass">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/sass.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="vs">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/vs.png" alt="NOt img"/>
+                </div>
+            </div>
+            <div class="game-block" data-img="vs">
+                <div class="face front">
+                    <img src="image/Vue.js.png" alt="NOt img"/>
+                </div>
+                <div class="face back">
+                    <img src="image/vs.png" alt="NOt img"/>
+                </div>
+            </div>
+        </div>
+    <script src="main.js"></script>
+    </body>
+</html>
